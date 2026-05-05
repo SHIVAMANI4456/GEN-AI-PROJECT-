@@ -1,6 +1,6 @@
 body {
   font-family: Arial;
-  background: #111;
+  background: #0f172a;
   color: white;
   text-align: center;
 }
@@ -8,15 +8,25 @@ body {
 .container {
   display: flex;
   justify-content: space-around;
+  margin: 20px;
 }
 
-.inputs, .outputs {
-  background: #222;
+.panel {
+  background: #1e293b;
   padding: 20px;
   border-radius: 10px;
+  width: 40%;
 }
 
 input, select {
   margin: 5px;
   padding: 5px;
+}
+
+button {
+  padding: 10px;
+  margin-top: 10px;
+  background: #22c55e;
+  border: none;
+  cursor: pointer;
 }
