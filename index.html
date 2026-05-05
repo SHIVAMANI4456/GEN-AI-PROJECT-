@@ -1,56 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>IC Engine Dashboard</title>
+  <title>IC Engine Smart Dashboard</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
 
-<h1>🚗 IC Engine Dashboard</h1>
+<h1>🚗 IC Engine Efficiency & Fault Diagnosis Dashboard</h1>
 
 <div class="container">
 
-  <!-- INPUTS -->
+  <!-- 🔹 INPUT PANEL -->
   <div class="panel">
     <h2>Inputs</h2>
 
-    Fuel Type:
+    <label>Fuel Type:</label><br>
     <select id="fuel">
       <option value="petrol">Petrol</option>
       <option value="ethanol">Ethanol</option>
       <option value="cng">CNG</option>
     </select><br>
 
-    RPM:
+    <label>Engine Speed (RPM):</label><br>
     <input type="number" id="rpm" value="3000"><br>
 
-    Temperature (°C):
+    <label>Temperature (°C):</label><br>
     <input type="number" id="temp" value="80"><br>
 
-    Compression Ratio:
+    <label>Compression Ratio:</label><br>
     <input type="number" id="cr" value="10"><br>
 
     <button onclick="runModel()">Run Analysis</button>
   </div>
 
-  <!-- OUTPUT -->
+  <!-- 🔹 OUTPUT PANEL -->
   <div class="panel">
     <h2>Results</h2>
+
     <p id="eff"></p>
     <p id="quality"></p>
     <p id="effects"></p>
+
+    <hr>
+
+    <h3>🔍 Diagnosis & Recommendation</h3>
+    <p id="diagnosis"></p>
+    <p id="solution"></p>
+    <p id="severity"></p>
   </div>
 
 </div>
 
-<h2>📊 Graphs</h2>
+<!-- 🔥 GRAPHS SECTION -->
+<h2>📊 Engine Analysis Graphs</h2>
 
-<canvas id="rpmGraph"></canvas>
-<canvas id="tempGraph"></canvas>
-<canvas id="crGraph"></canvas>
+<div class="graphs">
+  <canvas id="rpmGraph"></canvas>
+  <canvas id="tempGraph"></canvas>
+  <canvas id="crGraph"></canvas>
+</div>
 
+<!-- JS -->
 <script src="script.js"></script>
 
 </body>
