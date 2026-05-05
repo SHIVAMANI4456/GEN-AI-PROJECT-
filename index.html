@@ -1,15 +1,23 @@
-Fuel Type:
+<h2>Inputs</h2>
+
+<!-- Fuel Type -->
+<label>Fuel Type:</label>
 <select id="fuel">
   <option value="petrol">Petrol</option>
   <option value="ethanol">Ethanol</option>
   <option value="cng">CNG</option>
-</select><br>
+</select><br><br>
 
-RPM:
-<input type="number" id="rpm" value="2500"><br>
+<!-- RPM -->
+<label>Engine Speed (RPM):</label>
+<input type="number" id="rpm" value="2500"><br><br>
 
-Temperature (°C):
-<input type="number" id="temp" value="30"><br>
+<!-- Temperature -->
+<label>Temperature (°C):</label>
+<input type="number" id="temp" value="50"><br><br>
 
-Compression Ratio:
-<input type="number" id="cr" value="10"><br>
+<!-- Engine Specification -->
+<label>Compression Ratio:</label>
+<input type="number" id="cr" value="10"><br><br>
+
+<button onclick="runModel()">Run Analysis</button>
