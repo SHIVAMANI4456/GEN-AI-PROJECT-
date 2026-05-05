@@ -1,58 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>IC Engine Dashboard</title>
+  <title>IC Engine Smart Dashboard</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
-<h1>IC Engine Efficiency & Exhaust Analyzer</h1>
+
+<h1>🚗 IC Engine Efficiency & Emission Dashboard</h1>
 
 <div class="container">
 
   <!-- INPUT PANEL -->
-  <div class="inputs">
-    <h2>Engine Inputs</h2>
+  <div class="panel">
+    <h2>Inputs</h2>
 
     Compression Ratio:
     <input type="number" id="cr" value="10"><br>
 
-    RPM:
-    <input type="number" id="rpm" value="2500"><br>
+    AFR:
+    <input type="number" id="afr" value="14.7"><br>
 
-    Mixture:
-    <select id="mixture">
-      <option value="stoich">Stoichiometric</option>
-      <option value="lean">Lean</option>
-      <option value="rich">Rich</option>
+    Engine Load:
+    <select id="load">
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
     </select><br>
 
-    LHV (MJ/kg):
-    <input type="number" id="lhv" value="44"><br>
+    Temperature (°C):
+    <input type="number" id="temp" value="30"><br>
+
+    Fuel Type:
+    <select id="fuel">
+      <option value="petrol">Petrol</option>
+      <option value="ethanol">Ethanol</option>
+      <option value="cng">CNG</option>
+    </select><br>
 
     Octane:
     <input type="number" id="octane" value="95"><br>
 
+    LHV:
+    <input type="number" id="lhv" value="44"><br>
+
     Sulfur (ppm):
     <input type="number" id="sulfur" value="10"><br>
 
-    <button onclick="calculate()">Run Analysis</button>
+    <button onclick="runModel()">Run Analysis</button>
   </div>
 
   <!-- OUTPUT PANEL -->
-  <div class="outputs">
+  <div class="panel">
     <h2>Results</h2>
     <p id="eff"></p>
     <p id="quality"></p>
+    <p id="pollutants"></p>
     <p id="effects"></p>
+    <p id="recommend"></p>
   </div>
 
 </div>
 
-<!-- GRAPH -->
-<canvas id="emissionChart"></canvas>
+<!-- GRAPHS -->
+<h2>📊 Emission Analysis</h2>
+
+<canvas id="emissionBar"></canvas>
+<canvas id="afrGraph"></canvas>
+<canvas id="crGraph"></canvas>
 
 <script src="script.js"></script>
+
 </body>
 </html>
