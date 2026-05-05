@@ -19,13 +19,14 @@ body {
 }
 
 input, select {
-  margin: 5px;
-  padding: 5px;
+  margin: 10px;
+  padding: 8px;
+  width: 80%;
 }
 
 button {
   padding: 10px;
-  margin-top: 10px;
+  margin-top: 15px;
   background: #22c55e;
   border: none;
   cursor: pointer;
