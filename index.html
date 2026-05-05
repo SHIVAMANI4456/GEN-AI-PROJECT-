@@ -1,23 +1,57 @@
-<h2>Inputs</h2>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IC Engine Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
 
-<!-- Fuel Type -->
-<label>Fuel Type:</label>
-<select id="fuel">
-  <option value="petrol">Petrol</option>
-  <option value="ethanol">Ethanol</option>
-  <option value="cng">CNG</option>
-</select><br><br>
+<body>
 
-<!-- RPM -->
-<label>Engine Speed (RPM):</label>
-<input type="number" id="rpm" value="2500"><br><br>
+<h1>🚗 IC Engine Dashboard</h1>
 
-<!-- Temperature -->
-<label>Temperature (°C):</label>
-<input type="number" id="temp" value="50"><br><br>
+<div class="container">
 
-<!-- Engine Specification -->
-<label>Compression Ratio:</label>
-<input type="number" id="cr" value="10"><br><br>
+  <!-- INPUTS -->
+  <div class="panel">
+    <h2>Inputs</h2>
 
-<button onclick="runModel()">Run Analysis</button>
+    Fuel Type:
+    <select id="fuel">
+      <option value="petrol">Petrol</option>
+      <option value="ethanol">Ethanol</option>
+      <option value="cng">CNG</option>
+    </select><br>
+
+    RPM:
+    <input type="number" id="rpm" value="3000"><br>
+
+    Temperature (°C):
+    <input type="number" id="temp" value="80"><br>
+
+    Compression Ratio:
+    <input type="number" id="cr" value="10"><br>
+
+    <button onclick="runModel()">Run Analysis</button>
+  </div>
+
+  <!-- OUTPUT -->
+  <div class="panel">
+    <h2>Results</h2>
+    <p id="eff"></p>
+    <p id="quality"></p>
+    <p id="effects"></p>
+  </div>
+
+</div>
+
+<h2>📊 Graphs</h2>
+
+<canvas id="rpmGraph"></canvas>
+<canvas id="tempGraph"></canvas>
+<canvas id="crGraph"></canvas>
+
+<script src="script.js"></script>
+
+</body>
+</html>
