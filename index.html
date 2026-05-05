@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IC Engine Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+<h1>IC Engine Efficiency & Exhaust Analyzer</h1>
+
+<div class="container">
+
+  <!-- INPUT PANEL -->
+  <div class="inputs">
+    <h2>Engine Inputs</h2>
+
+    Compression Ratio:
+    <input type="number" id="cr" value="10"><br>
+
+    RPM:
+    <input type="number" id="rpm" value="2500"><br>
+
+    Mixture:
+    <select id="mixture">
+      <option value="stoich">Stoichiometric</option>
+      <option value="lean">Lean</option>
+      <option value="rich">Rich</option>
+    </select><br>
+
+    LHV (MJ/kg):
+    <input type="number" id="lhv" value="44"><br>
+
+    Octane:
+    <input type="number" id="octane" value="95"><br>
+
+    Sulfur (ppm):
+    <input type="number" id="sulfur" value="10"><br>
+
+    <button onclick="calculate()">Run Analysis</button>
+  </div>
+
+  <!-- OUTPUT PANEL -->
+  <div class="outputs">
+    <h2>Results</h2>
+    <p id="eff"></p>
+    <p id="quality"></p>
+    <p id="effects"></p>
+  </div>
+
+</div>
+
+<!-- GRAPH -->
+<canvas id="emissionChart"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>
